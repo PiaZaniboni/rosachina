@@ -1,0 +1,72 @@
+html {
+	display: block;
+	height: 100%;
+}
+
+body {
+	background-color: #B64553;
+	color: #ffffff;
+	display: block;
+	font-family: 'Montserrat', sans-serif;
+	height: 100%;
+	margin:0;
+	padding: 0;
+}
+
+ul, 
+li {
+	list-style: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}	
+
+a, 
+a:hover, 
+a:link, 
+a:visited, 
+a:focus {
+	color: #ffffff;
+	letter-spacing: 3px;
+	text-decoration: none;	
+}
+
+/**/
+@font-face {
+    font-family: 'brandon_textmedium';
+    src: url('brandontext-medium-webfont.woff2') format('woff2'),
+         url('brandontext-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body.intro {
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo h2{
+	font-family: 'brandon_textmedium', sans-serif;
+	font-size: 30px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	color: #ffffff;
+	padding-top: 10px;
+	font-weight: 100;
+}
+
+
+@media screen and (max-width: 500px) {
+	
+
+}
+
