@@ -106,11 +106,14 @@ add_action( 'widgets_init', 'rosachina_widgets_init' );
  */
 function rosachina_scripts() {
 	wp_enqueue_style( 'rosachina-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'rosachina-font1',  get_template_directory_uri() . '/font/font.css' );
+
+	wp_enqueue_style ( 'rosachina-fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,400i,600i,700' );
 
 	wp_enqueue_script( 'rosachina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'rosachina-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	
+
 	//Funciones
 	wp_enqueue_script( 'rosachina-jquery', get_template_directory_uri() . '/js/jquery.js' );
 	wp_enqueue_script( 'rosachina-funciones', get_template_directory_uri() . '/js/funciones.js');
@@ -193,14 +196,14 @@ class Custom_Admin {
         _default_wp_die_handler(__('You do not have sufficient permissions to access this page.'));
     }
 
-    public function modify_menus() 
+    public function modify_menus()
     {
         remove_submenu_page( 'themes.php', 'themes.php' ); // hide the theme selection submenu
         remove_submenu_page( 'themes.php', 'widgets.php' ); // hide the widgets submenu
 
         //remove_menu_page('edit-comments.php'); // Removemos el ítem comentarios
         remove_menu_page('customizer.php'); // Removemos el ítem comentarios
-        remove_menu_page('upload.php'); // Medios 
+        remove_menu_page('upload.php'); // Medios
         remove_menu_page( 'tools.php' );                  //Herramientas
         remove_menu_page( 'edit.php?post_type=cfs' );//CFS
         remove_menu_page( 'admin.php?page=wpcf7' );//Contact Foms
@@ -283,18 +286,25 @@ new Custom_Admin();
 
 //MODIFICAR MENÚ DE ADMINISTRACIÓN DE WORDPRESS
 add_action( 'admin_menu', 'apk_eliminar_admin_menu_links' );
- 
+
 function apk_eliminar_admin_menu_links() {
- 
+
     $user = wp_get_current_user(); //Obtenemos los datos del usuario actual
- 
+
     if ( ! $user->has_cap( 'manage_options' ) ) { // Si es que el usuario no tiene rol de administrador
         remove_menu_page('customizer.php'); // Removemos el ítem comentarios
         //remove_menu_page('edit-comments.php'); // Removemos el ítem comentarios
-        remove_menu_page('upload.php'); // Medios 
+        remove_menu_page('upload.php'); // Medios
         remove_menu_page( 'tools.php' );                  //Herramientas
         remove_menu_page( 'edit.php?post_type=cfs' );//CFS
         remove_menu_page( 'wpcf7' );
-        
+
     }
 }
+
+
+//Sacar p que rodea a los imag
+function filter_ptags_on_images($content){
+    return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '\1', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');

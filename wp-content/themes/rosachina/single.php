@@ -16,23 +16,19 @@ get_header(); ?>
 
 		<div class="contenedor-nota">
 
-			<div class="encabezado-nota set-height">
-				<img src="<?php the_post_thumbnail_url( 'large' ); ?>">
-				<div class="caja-texto-nota">
-					<h3><?php the_title() ?></h3>
+			<!--<div class="encabezado-nota set-height">
 
-					<?php
-					$frase = CFS()->get( 'frase' );
-					if ( $frase != ' ' ){ ?>
-						<h5><?php echo $frase; ?> </h5>
-					<?php } ?>
-				</div>
+			</div>-->
+
+			<div class="caja-texto-nota">
+				<h1><?php the_title() ?></h1>
 			</div>
+			<img class="encabezado-img" src="<?php the_post_thumbnail_url( 'large' ); ?>">
+
 
 		<?php $fields = CFS()->get( 'linea-tiempo' );
 		if ($fields != ''){ ?>
 			<div class="maqueta-caja-carousel-linea-tiempo">
-				<div class="carousel-cosito-gris"></div>
 					<div class="caja-carousel-linea-tiempo">
 						<div class="carousel-linea-tienpo">
 
@@ -51,11 +47,9 @@ get_header(); ?>
 		<?php }?>
 
 			<div class="caja-contenido-blanco">
-				<div class="cosito-gris"></div>
+
 				<div class="caja-contenido">
-						<!--<div class="cosito-principio"><img src="<?php echo get_template_directory_uri(); ?>/img/cuadraditos-perfil2.png"></div>-->
 							<?php the_content(); ?>
-						<!--<div class="cosito-final"><img src="<?php echo get_template_directory_uri(); ?>/img/cuadraditos-perfil2.png"></div>-->
 				</div>
 
 			</div>
