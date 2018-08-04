@@ -23,14 +23,16 @@
 <div id="page" class="site">
 
 	<?php include 'nav-responsive.php';?>
-	<div class="site-branding-2 set-height">
+	<div class="site-branding-2">
 
 		<a class="btn-menu-mobile nav-index-responsive" href="javascript:void(0);" style="display:none;">
 			<img class="svg icon-bar"  src="<?php echo get_template_directory_uri(); ?>/img/icon-bar.svg" alt="rosachina">
 		</a>
 
 		<div class="caja-home">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/nuevo-logo.png" alt="rosachina"></a>
+			<div class="caja-marca">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/nuevo-logo.png" alt="rosachina"></a>
+			</div>
 
 			<div class="frase-home">
 				<p>"Nada hay más elevado, más precioso, más sublime que el arte, el cual permite, gracias
@@ -38,36 +40,38 @@
 				<span>Lipovetsky</span>
 			</div>
 
-			<div class="nav-footer nav-home">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-					'after' => '<span></span>',
-				) );
-			?>
-			</div>
+			<header id="masthead" class="site-header" role="banner">
+				<a class="btn-menu-mobile" href="javascript:void(0);" style="display:none;">
+					<img class="icon-bar"  src="<?php echo get_template_directory_uri(); ?>/img/icon-bar.svg" alt="rosachina">
+				</a>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'after' => '<span></span>',
+						) );
+					?>
+				</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
 		</div>
 	</div><!-- .site-branding -->
 
-	<!--	<div class="nav-redes">
-			<a class="btn-facebook" href="www.facebook.com" target="_blank" > <img src="<?php echo get_template_directory_uri(); ?>/img/icon-facebook.svg"> </a>
-			<a class="btn-instagram" href="www.instagram.com" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/img/icon-instagram.svg"> </a>
-		</div> -->
 
 
 	<div id="content" class="site-content">
 
 	<div id="primary" class="content-area">
 
-		<div id="entrevistas" class="slider-galeria">
+		<div id="entrevistas" class="notas-home">
 			<?php if ( have_posts() ) :
 				/* Start the Loop */
 				while ( have_posts() ) : the_post(); ?>
 
-				<div class="post-portada set-height">
+				<div class="post-portada">
 					<a href="<?php echo get_permalink( $post->ID ); ?>">
-						<img src="<?php the_post_thumbnail_url( 'large' ); ?>">
+						<div class="imagen" style ="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?>')"></div>
 						<div class="caja-texto-inicio">
 							<h3> <?php the_title() ?> </h3>
 
@@ -80,7 +84,6 @@
 
 						</div>
 					</a>
-					<a class="btn-leer-mas" href="<?php echo get_permalink( $post->ID ); ?>">Leer m&aacute;s</a>
 				</div>
 				<?php endwhile;
 			else :

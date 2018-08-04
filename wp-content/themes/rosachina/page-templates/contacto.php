@@ -21,9 +21,6 @@ get_header(); ?>
 <div class="content-contacto" >
 	<div class="contenido-contacto set-height-2">
 		<?php the_content(); ?>
-
-		<div class="mail-rosachina"> <?php echo CFS()->get( 'mail' );?> </div>
-		<img src="<?php echo get_template_directory_uri(); ?>/img/cuadraditos-perfil2.png" class="img-contacto-cuadraditos">
 	</div>
 </div>
 

@@ -106,7 +106,6 @@ add_action( 'widgets_init', 'rosachina_widgets_init' );
  */
 function rosachina_scripts() {
 	wp_enqueue_style( 'rosachina-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'rosachina-font1',  get_template_directory_uri() . '/font/font.css' );
 
 	wp_enqueue_style ( 'rosachina-fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,400i,600i,700' );
 

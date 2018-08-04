@@ -42,11 +42,7 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
-		<div class="nav-redes">
-			<a class="btn-instagram" href="https://www.instagram.com/rosachinamag/" target="_blank"> <img class="svg icon-header" src="<?php echo get_template_directory_uri(); ?>/img/icon-instagram.svg"> </a>
-			<a class="btn-facebook" href="https://www.facebook.com/Rosachina-151319665439539" target="_blank" > <img class="svg icon-header" src="<?php echo get_template_directory_uri(); ?>/img/icon-facebook.svg"> </a>
-		</div>
-
+	
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

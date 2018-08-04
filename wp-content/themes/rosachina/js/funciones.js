@@ -45,8 +45,8 @@ $(document).ready(function(){
 	$('.carousel-linea-tienpo').slick({
 			infinite: false,
 			speed: 400,
-			slidesToShow: 5,
-			slidesToScroll: 5,
+			slidesToShow: 2,
+			slidesToScroll: 1,
 			cssEase: 'linear',
 			arrows: true,
 			dots: false,
@@ -56,37 +56,13 @@ $(document).ready(function(){
 					{
 						breakpoint: 1600,
 						settings: {
-							slidesToShow: 4,
-							slidesToScroll: 4,
-							infinite: true,
-						}
-					},
-					{
-						breakpoint: 1400,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3,
-							infinite: true,
-						}
-					},
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3,
+							slidesToShow: 2,
+							slidesToScroll: 1,
 							infinite: true,
 						}
 					},
 					{
 						breakpoint: 1000,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2,
-							infinite: true
-						}
-					},
-					{
-						breakpoint: 600,
 						settings: {
 							slidesToShow: 1,
 							slidesToScroll: 1,

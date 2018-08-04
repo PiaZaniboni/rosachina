@@ -7,7 +7,7 @@
  * @package rosachina
  */
 
-get_header(); ?>
+get_header('entrevista'); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -23,7 +23,7 @@ get_header(); ?>
 			<div class="caja-texto-nota">
 				<h1><?php the_title() ?></h1>
 			</div>
-			<img class="encabezado-img" src="<?php the_post_thumbnail_url( 'large' ); ?>">
+			<img class="encabezado-img" src="<?php the_post_thumbnail_url( 'full' ); ?>">
 
 
 		<?php $fields = CFS()->get( 'linea-tiempo' );
@@ -61,8 +61,7 @@ get_header(); ?>
 					<?php foreach ( $fields as $field ) {  ?>
 					<div class="caja-conjunto">
 
-						<span><?php echo $field['icono_fondo']; ?></span>
-						<div class="caja-pregunta"><?php echo $field['texto']; ?></div>
+						<div class="caja-pregunta <?php echo $field['icono_fondo']; ?>"><?php echo $field['texto']; ?></div>
 
 					</div>
 					<?php } ?>
@@ -83,19 +82,30 @@ get_header(); ?>
 				</div>
 			<?php } ?>
 
-			<h5 class="titulo-video arriba"><?php echo CFS()->get( 'titulo_video' ); ?></h5>
-			<div class="caja-video">
-				<?php $video = CFS()->get( 'video' );
-					if( $video !=  '' ){
-						echo $video;
-					}
-				?>
-			</div>
-			<h5 class="titulo-video abajo"><?php echo CFS()->get( 'abajo_video' ); ?></h5>
+			<?php if ( CFS()->get( 'titulo_video' ) != '' ) { ?>
+				<h5 class="titulo-video arriba"><?php echo CFS()->get( 'titulo_video' ); ?></h5>
+			<?php } ?>
 
-			<div class="caja-aclaracion">
-				<?php echo CFS()->get( 'aclaracion' ); ?>
-			</div>
+			<?php if ( CFS()->get( 'video' ) != '' ) { ?>
+				<div class="caja-video">
+					<?php $video = CFS()->get( 'video' );
+						if( $video !=  '' ){
+							echo $video;
+						}
+					?>
+				</div>
+			<?php } ?>
+
+			<?php if ( CFS()->get( 'abajo_video' ) != '' ) { ?>
+			<h5 class="titulo-video abajo"><?php echo CFS()->get( 'abajo_video' ); ?></h5>
+			<?php } ?>
+
+			<?php if ( CFS()->get( 'aclaracion' ) != '' ) { ?>
+				<div class="caja-aclaracion">
+					<?php echo CFS()->get( 'aclaracion' ); ?>
+				</div>
+			<?php } ?>
+
 
 
 
@@ -115,6 +125,18 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+	<div class="footer-nota">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/r-footer.jpg">
+
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-1',
+				'menu_id'        => 'primary-menu',
+				'after' => '<span></span>',
+			) );
+		?>
+	</div>
 
 <?php
 get_footer();

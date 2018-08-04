@@ -15,13 +15,6 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="nav-footer nav-footer2">
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-						'after' => '<span></span>',
-					) );
-				?>
 				<div class="footer-redes">
 						<a class="btn-mensaje" href="http://www.rosachinamag.com/contacto/"> <img class="svg icon-footer" src="<?php echo get_template_directory_uri(); ?>/img/icon-mensaje.svg"> </a>
 						<a class="btn-facebook" href="https://www.facebook.com/Rosachina-151319665439539" target="_blank" > <img class="svg icon-footer" src="<?php echo get_template_directory_uri(); ?>/img/icon-facebook.svg"> </a>
@@ -32,7 +25,7 @@
 
 
 
-		<div class="site-info">® 2017, La Plata, Buenos Aires</div><!-- .site-info -->
+		<div class="site-info">® 2018, La Plata, Buenos Aires</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
