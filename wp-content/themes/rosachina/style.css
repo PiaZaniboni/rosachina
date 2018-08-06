@@ -199,6 +199,12 @@ h1, h2, h3, h4, h5, h6{
 		letter-spacing: 2px;
 		text-transform: uppercase;
 	}
+    @media screen and ( min-width: 900px ){
+        .main-navigation ul li.cosito a::after{
+            content: '-';
+            padding-left: 7px;
+        }
+    }
 	.main-navigation ul li span{
 		display: block;
 		position: absolute;
@@ -210,7 +216,7 @@ h1, h2, h3, h4, h5, h6{
 		transition: all ease 250ms;
 	}
 	.main-navigation ul li:hover span, .main-navigation ul li.current-menu-item span{
-		width: 100%;
+		width: 94%;
 	}
 
 .nav-redes{
@@ -226,7 +232,7 @@ h1, h2, h3, h4, h5, h6{
     # Nav responsive
     --------------------------------------------------------------*/
     .nav-responsive{
-      background-color: #913944;
+      background-color: #000;
       position: fixed;
       bottom: 100%;
       left: 0;
@@ -250,11 +256,11 @@ h1, h2, h3, h4, h5, h6{
     }
     .nav-responsive ul li a{
   		color: #ffffff;
-  		font-family: 'brandon_textmedium', sans-serif;
+  		font-family: 'Bodoni MT', serif;
   		font-size: 18px;
   		letter-spacing: 2px;
   		text-transform: uppercase;
-      margin-bottom: 30px;
+        margin-bottom: 30px;
   	}
     .redes-responsive{
       margin-top: 20px;
@@ -294,9 +300,8 @@ h1, h2, h3, h4, h5, h6{
 
     .post-portada{
         width: 27.3%;
-        margin: 0 3%;
+        margin: 0 3% 70px;
         float: left;
-        margin-bottom: 70px;
     }
     .post-portada a{
         display: block;
@@ -309,11 +314,13 @@ h1, h2, h3, h4, h5, h6{
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        transition: all ease 150ms;
     }
-
-    .post-portada span.tipo-bold, .caja-texto-nota span.tipo-bold {
-        font-family: 'brandon_textbold', sans-serif;
-        font-size: 64px;
+    .post-portada .imagen:hover{
+        opacity: 0.7;
+    }
+    .caja-texto-inicio{
+      min-height: 110px;
     }
     /* NUEVO */
     .caja-texto-nota h1{
@@ -472,21 +479,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     padding: 0 !important;
     margin-bottom: 120px;
     margin-top: 60px;
-}
-
-.caja-contenido .cosito-principio {
-    position: absolute;
-    top: -11%;
-    left: 5%;
-    z-index: 0;
-}
-
-.caja-contenido .cosito-final {
-    display: none;
-    position: absolute;
-    bottom: 8%;
-    right: 3%;
-    z-index: 0;
 }
 
 /*Pie de nota*/
@@ -785,46 +777,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     width: 350px;
 }
 
-/*Depende de la imagen*/
-.align-left .cajita-texto{
-    float: right;
-}
-@media screen and ( min-width: 1000px){
-  .align-left .img-perfil{
-    float: right;
-  }
-
-  .align-right .img-perfil{
-    float: left;
-  }
-}
-
-.align-right .cajita-texto{
-    float: left;
-}
-
-/*Caja Roja*/
-.caja-perfil .cajita-texto.caja-1 h2, .caja-perfil .cajita-texto.caja-1 p, .caja-perfil .cajita-texto.caja-1 p a,
-.caja-perfil .cajita-texto.caja-2 h2, .caja-perfil .cajita-texto.caja-2 p, .caja-perfil .cajita-texto.caja-2 p a{
-    color: #ffffff;
-}
-
-.caja-perfil .cajita-texto.caja-1 h3 {
-    color: #913944;
-}
-
-.img-perfil-cuadraditos{
-    position: absolute;
-    left: 0;
-    top: 78%;
-}
-
-.img-perfil-cuadraditos2{
-    position: absolute;
-    right: 0;
-    top: 220%;
-}
-
 /*--------------------------------------------------------------
 # Contacto
 --------------------------------------------------------------*/
@@ -835,6 +787,7 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     color: #000;
     letter-spacing: 1px;
     font-size: 16px;
+    line-height: 22px;
 }
 .contenido-contacto form {
 	margin: 50px auto 0;
@@ -1071,7 +1024,7 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 }
 
 .icon-footer:hover path {
-    fill: rgb(182,69,83) !important;
+    fill: rgb(0,0,0) !important;
 }
 
 /*Iconitos Header*/
@@ -1093,16 +1046,22 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 /*--------------------------------------------------------------*/
 
 @media screen and ( max-width: 1700px ){
+
+    /*Entrevista*/
+    .caja-contenido p{
+        padding: 0 24%;
+    }
+    .caja-texto-nota h1 {
+        padding: 90px 24%;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 90px 24%;
+    }
+
   .site-header {
     padding: 50px 0;
   }
-  .site-footer {
-    padding: 50px 0;
-  }
   /*Cuerpo nota*/
-  .caja-contenido {
-    padding: 10px 10% 50px;
-  }
   .caja-preguntas {
     padding: 20px 10% 40px;
   }
@@ -1132,6 +1091,15 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 }
 
 @media screen and ( max-width: 1500px){
+    .caja-contenido p{
+        padding: 0 17%;
+    }
+    .caja-texto-nota h1 {
+        padding: 90px 17%;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 90px 17%;
+    }
   /*Nav*/
   .site-branding {
     padding: 30px 20px 30px;
@@ -1139,19 +1107,12 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .site-branding img {
     width: 1100px;
   }
-  .main-navigation ul li {
-    margin-right: 100px;
-  }
-  /*INCIO*/
-  .btn-leer-mas {
-    top: 77%;
-  }
-  /*FOOTER*/
-  .nav-footer .menu-menu-1-container ul li {
-    margin-right: 100px;
-  }
 
-  /*Entrevista foto*/
+  /*Portada Entrevista*/
+  .post-portada{
+     width: 44%;
+     margin: 0 3% 70px;
+  }
 
   /*Contacto*/
   .contenido-contacto form {
@@ -1172,13 +1133,15 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 }
 
 @media screen and (max-width: 1300px){
-  /*Nav*/
-  .nav-redes {
-    padding-right: 4%;
-  }
-  .main-navigation {
-    margin-left: 4%
-  }
+    .caja-contenido p{
+        padding: 0 13%;
+    }
+    .caja-texto-nota h1 {
+        padding: 90px 13%;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 90px 13%;
+    }
   /*Footer*/
   .footer-redes {
     padding-right: 4%;
@@ -1186,20 +1149,21 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .nav-footer .menu-menu-1-container ul {
     margin: 20px 0 30px 4%;
   }
-  /*Portada*/
-  .post-portada img {
-    left: 3%;
-  }
-
 }
 
 @media screen and (max-width: 1200px){
+    .caja-contenido p{
+        padding: 0 7%;
+    }
+    .caja-texto-nota h1 {
+        padding: 90px 7%;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 90px 7%;
+    }
   /*Nav*/
   .site-branding img {
       width: 900px;
-  }
-  .main-navigation ul li {
-    margin-right: 70px;
   }
   /*Footer*/
   .nav-footer .menu-menu-1-container ul li {
@@ -1215,10 +1179,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   /*Perfiles*/
   .cajita-texto {
     margin-top: 70px;
-  }
-  .caja-perfil p {
-    font-size: 14px;
-    line-height: 28px;
   }
   .caja-perfil h3 {
     font-size: 23px;
@@ -1256,16 +1216,23 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     width: 100%;
     margin-top: 30px;
   }
-  .img-perfil {
-    width: 50%;
-    margin: 0 auto;
-  }
 
 }
 
 
 /*MOBILE*/
 @media screen and ( max-width: 900px ){
+
+    /*Entrevista*/
+    .caja-contenido p{
+        padding: 0 40px;
+    }
+    .caja-texto-nota h1 {
+        padding: 90px 40px;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 90px 40px;
+    }
 
   /*Nav mobile*/
   .btn-menu-mobile{
@@ -1281,12 +1248,7 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
       display: none !important;
   }
   .site-footer {
-    padding: 20px 0;
-  }
-
-  /*Inicio*/
-  .caja-texto-inicio{
-    position: relative;
+    padding: 20px 40px;
   }
 
   .btn-leer-mas {
@@ -1298,9 +1260,8 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     width: 95% !important;
   }
 
-  .post-portada img {
-      width: auto;
-      height: 61%;
+  .post-portada .imagen{
+      height: 450px;
   }
 
   /*Entrevista*/
@@ -1328,12 +1289,7 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   }
 
   /*Cosas*/
-  .caja-contenido .cosito-principio, .img-perfil-cuadraditos, .img-perfil-cuadraditos2 {
-    display: none;
-  }
-  .cosito-gris, .cosito-gris, .carousel-cosito-gris {
-    width: 50%;
-  }
+
   .caja-contenido p img{
     width: 100%;
     max-width: 100%;
@@ -1341,9 +1297,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   }
 
   /*Cuerpo nota*/
-  .caja-contenido {
-    padding: 10px 5% 50px;
-  }
   .caja-preguntas {
     padding: 20px 5% 40px;
   }
@@ -1373,12 +1326,16 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 
 
   /*Portada home*/
+  .notas-home {
+    padding: 0 40px;
+  }
+  .post-portada {
+      width: 100%;
+      margin: 0 0 70px;
+    }
   .post-portada h2, .caja-texto-nota h2 {
     font-size: 40px;
     margin-bottom: 0px;
-  }.post-portada h3, .caja-texto-nota h3 {
-    font-size: 64px;
-    line-height: 80px;
   }
   .post-portada h5, .caja-texto-nota h5 {
     font-size: 90px;
@@ -1391,14 +1348,51 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 
 }
 
-@media screen and ( max-width: 560px ){
+@media screen and ( max-width: 700px ){
+    /*Entrevista*/
+    .caja-contenido p{
+        padding: 0 25px;
+    }
+    .caja-texto-nota h1 {
+        font-size: 55px;
+        line-height: 75px;
+        padding: 20px 30px;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 20px 30px;
+        font-size: 35px;
+        line-height: 55px;
+    }
+    .encabezado-img {
+        margin-bottom: 10px;
+    }
+    img.aligncenter, img.alignnone, img.alignleft, img.alignright {
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+}
+
+
+
+@media screen and ( max-width: 600px ){
+    /*Portada Nueva*/
+    .site-header{
+        margin-bottom: 0px;
+    }
+    .notas-home {
+        padding: 0 20px;
+    }
+    .post-portada .imagen {
+        height: 400px;
+    }
+    .post-portada {
+        margin: 0 0 40px;
+    }
+
   /*Portada home*/
   .post-portada h2, .caja-texto-nota h2 {
     font-size: 40px;
     margin-bottom: 0px;
-  }.post-portada h3, .caja-texto-nota h3 {
-    font-size: 64px;
-    line-height: 80px;
   }
   .post-portada h5, .caja-texto-nota h5 {
     font-size: 90px;
@@ -1409,14 +1403,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     top: 40%;
   }
 
-  /*Entrevista*/
-
-
-  .carousel-cosito-gris, .cosito-gris{
-    display: none;
-  }
-
- /*Perfiles*/
  .caja-perfil h3 {
      font-size: 20px;
      padding-top: 4px;
@@ -1445,20 +1431,29 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     padding-right: 5%;
   }
 
+  /*Perfil*/
+  .img-perfil img {
+      width:100%;
+  }
+
 }
 
 @media screen and ( max-width: 470px ){
-  /*Home*/
+
+    .caja-texto-nota h1 {
+        font-size: 35px;
+        line-height: 55px;
+        padding: 20px 30px;
+    }
+    .caja-contenido h2, .caja-contenido h3, .caja-contenido h4 {
+        padding: 20px 30px;
+        font-size: 25px;
+        line-height: 40px;
+    }
 
   .post-portada h2, .caja-texto-nota h2 {
     font-size: 33px;
     line-height: 50px;
-  }
-  .post-portada h3, .caja-texto-nota h3 {
-    font-size: 56px;
-    line-height: 59px;
-    padding-left: 10px;
-    margin-top: 5px;
   }
   .post-portada h5, .caja-texto-nota h5 {
       font-size: 55px;
@@ -1480,9 +1475,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .caja-perfil .caja-3 h3, .caja-perfil .caja-1 h3 {
     padding-left: 26px;
   }
-  .img-perfil {
-    width: 70%;
-  }
   .caja-perfil h2 {
     font-size: 53px;
     margin-bottom: 10px;
@@ -1503,12 +1495,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .post-portada h2, .caja-texto-nota h2 {
     font-size: 26px;
     line-height: 35px;
-  }
-  .post-portada h3, .caja-texto-nota h3 {
-    font-size: 44px;
-    line-height: 50px;
-    padding-left: 30px;
-    margin-top: 10px;
   }
   .post-portada h5, .caja-texto-nota h5 {
       font-size: 55px;
