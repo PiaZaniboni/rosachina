@@ -31,7 +31,18 @@
 
 		<div class="caja-home">
 			<div class="caja-marca">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/nuevo-logo.png" alt="rosachina"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<?php
+					if ( wp_is_mobile() ) {
+					    /* Display and echo mobile specific stuff here */
+					}else{ ?>
+						<video autoplay muted loop id="video">
+						  <source src="<?php echo get_template_directory_uri(); ?>/img/video-fondo.mp4" type="video/mp4">
+						</video>
+					<?php }
+					?>
+					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/nuevo-logo.png" alt="rosachina">
+				</a>
 			</div>
 
 			<div class="frase-home">
@@ -68,15 +79,18 @@
 
 				<div class="post-portada">
 					<a href="<?php echo get_permalink( $post->ID ); ?>">
-						<div class="imagen" style ="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?>')"></div>
+						<?php
+						$foto = CFS()->get( 'foto-portada' );
+						if ( $foto != '' ){ ?>
+							<div class="imagen" style ="background-image:url('<?php echo $foto ?>')"></div>
+						<?php }else{ ?>
+							<div class="imagen" style ="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?>')"></div>
+						<?php } ?>
+
 						<div class="caja-texto-inicio">
 							<h3> <?php the_title() ?> </h3>
 
-							<?php
-							$frase = CFS()->get( 'frase' );
-							if ( $frase != ' ' ){ ?>
-								<h5><?php echo $frase; ?> </h5>
-							<?php } ?>
+
 
 
 						</div>

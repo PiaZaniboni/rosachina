@@ -25,7 +25,7 @@
 
 
 
-		<div class="site-info">® 2018, La Plata, Buenos Aires</div><!-- .site-info -->
+		<div class="site-info">® 2018. La Plata, Buenos Aires</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
