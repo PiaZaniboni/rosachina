@@ -33,23 +33,22 @@ get_header(); ?>
 
 		$query->the_post(); ?>
 
-	<!-- ///// PROPIEDAD  //// -->
-			<div class="post-portada">
-				<a href="<?php echo get_permalink( $post->ID ); ?>">
-					<div class="imagen" style ="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?>')"></div>
-					<div class="caja-texto-inicio">
-						<h3> <?php the_title() ?> </h3>
+	<!-- ///// Entrevista  //// -->
+	<div class="post-portada">
+		<a href="<?php echo get_permalink( $post->ID ); ?>">
+			<?php
+			$foto = CFS()->get( 'foto-portada' );
+			if ( $foto != '' ){ ?>
+				<div class="imagen" style ="background-image:url('<?php echo $foto ?>')"></div>
+			<?php }else{ ?>
+				<div class="imagen" style ="background-image:url('<?php the_post_thumbnail_url( 'large' ); ?>')"></div>
+			<?php } ?>
 
-						<?php
-						$frase = CFS()->get( 'frase' );
-						if ( $frase != ' ' ){ ?>
-							<h5><?php echo $frase; ?> </h5>
-						<?php } ?>
-
-
-					</div>
-				</a>
-			</div>	
+			<div class="caja-texto-inicio">
+				<h3> <?php the_title() ?> </h3>
+			</div>
+		</a>
+	</div>
 	<!-- ///////// -->
 	<?php }
 	}

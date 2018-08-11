@@ -89,10 +89,6 @@
 
 						<div class="caja-texto-inicio">
 							<h3> <?php the_title() ?> </h3>
-
-
-
-
 						</div>
 					</a>
 				</div>

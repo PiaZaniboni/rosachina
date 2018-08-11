@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6{
 --------------------------------------------------------------*/
 .caja-marca{
     background: #000;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     height: 500px;
     overflow: hidden;
     position: relative;
@@ -199,8 +199,7 @@ h1, h2, h3, h4, h5, h6{
 .site-header {
 	width: 100%;
 	overflow: hidden;
-	padding: 60px 7% 50px;
-    margin-bottom: 50px;
+	padding: 60px 7% 20px;
 }
 	.main-navigation{
 		overflow: hidden;
@@ -302,6 +301,11 @@ h1, h2, h3, h4, h5, h6{
         stroke: rgb(255, 255, 255) !important;
     }
 
+.caja-pregunta.discos iframe{
+    margin: 10px 0.5%;
+    width: 19%;
+    height: 200px;
+}
 
 /*--------------------------------------------------------------
 # Home
@@ -669,8 +673,6 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     }
 
     .caja-pregunta{
-        font-family: 'brandon_textbold', sans-serif;
-        padding: 0 20px;
         position: relative;
         z-index: 99;
     }
@@ -905,7 +907,7 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     display: block;
     text-align: center;
     overflow: hidden;
-    margin: 100px 0;
+    margin: 60px 0;
 }
 .footer-nota .menu-menu-1-container{
     overflow: hidden;
@@ -1073,10 +1075,14 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .site-header {
     padding: 50px 0;
   }
+  .caja-pregunta.discos iframe {
+    width: 24%;
+    height: 220px;
+    }
   /*Cuerpo nota*/
-  .caja-preguntas {
+ /* .caja-preguntas {
     padding: 20px 10% 40px;
-  }
+  }*/
   .caja-aclaracion {
     padding: 40px 0 50px;
   }
@@ -1183,6 +1189,10 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .caja-marca {
       height: 400px;
   }
+  .caja-pregunta.discos iframe {
+    width: 32.3%;
+    height: 220px;
+    }
 }
 
 @media screen and (max-width: 1200px){
@@ -1275,10 +1285,19 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 
 /*MOBILE*/
 @media screen and ( max-width: 900px ){
+    .caja-pregunta.discos iframe {
+      width: 48%;
+      height: 220px;
+      margin: 10px 1%;
+     }
 
     /*Entrevista*/
     .caja-contenido p{
         padding: 0 40px;
+    }
+    .titulo-video{
+        padding: 0 40px;
+        line-height: 22px;
     }
     .caja-texto-nota h1 {
         padding: 90px 40px;
@@ -1287,7 +1306,7 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
         padding: 90px 40px;
     }
     .caja-aclaracion p{
-        padding: 0 40px;
+        padding: 0 20px;
     }
     .caja-pregunta.escritores, .caja-pregunta.discos h2{
         padding: 0 40px;
@@ -1308,10 +1327,10 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     position: absolute;
     top: 25px;
     right: 0px;
-    z-index: 9999999999999;
+    z-index: 99;
   }
   .site-header {
-      padding: 30px 0;
+      padding: 15px 0;
   }
   /*Footer*/
   .main-navigation, .nav-redes, .nav-footer  {
@@ -1367,11 +1386,8 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   }
 
   /*Cuerpo nota*/
-  .caja-preguntas {
-    padding: 20px 5% 40px;
-  }
   .caja-aclaracion {
-    padding: 40px 0 50px;
+    padding: 20px 0 0px;
   }
   .comments-area {
     padding: 50px 6%;
@@ -1420,6 +1436,14 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 }
 
 @media screen and ( max-width: 700px ){
+    .caja-video iframe {
+        width: 550px;
+    }
+    .caja-pregunta.discos iframe {
+      width: 100%;
+      height: 250px;
+      margin: 10px 0;
+     }
     .caja-carousel-linea-tiempo {
         padding: 70px 45px 0px;
     }
@@ -1440,6 +1464,9 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
     .caja-aclaracion p{
         padding: 0 25px;
     }
+    .titulo-video{
+        padding: 0 25px;
+    }
     .caja-pregunta.escritores, .caja-pregunta.discos h2{
         padding: 0 30px;
     }
@@ -1450,11 +1477,27 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
         margin-bottom: 40px;
         margin-top: 30px;
     }
+    .item-contenido {
+        padding: 20px 10px 20px;
+        margin: 0 7%;
+    }
+    .item-contenido p {
+        font-size: 18px;
+        line-height: 27px;
+    }
+    .item-contenido h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
 }
 
 
 
 @media screen and ( max-width: 600px ){
+    .caja-contenido {
+    font-size: 15px;
+    line-height: 25px;}
+
     /*Portada Nueva*/
     .site-header{
         margin-bottom: 0px;
@@ -1515,10 +1558,25 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
   .img-perfil img {
       width:100%;
   }
+  .titulo-video{
+      padding: 0 25px;
+  }
 
 }
-
+@media screen and ( max-width: 560px ){
+    .caja-video iframe {
+        width: 450px;
+    }
+}
 @media screen and ( max-width: 470px ){
+
+    .caja-video iframe {
+        width: 350px;
+    }
+    .caja-video {
+        margin: 0px auto 0px;
+    }
+
 
     .caja-texto-nota h1 {
         font-size: 35px;
@@ -1595,11 +1653,11 @@ img.aligncenter, img.alignnone, img.alignleft, img.alignright{
 
 
 .caja-video{
-    margin: 50px auto 20px;
+    margin: 0px auto 0px;
     display: block;
 }
 .caja-video iframe{
-    margin: 50px auto;
+    margin: 0px auto;
     display: block;
 }
 

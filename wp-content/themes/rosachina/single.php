@@ -69,6 +69,31 @@ get_header('entrevista'); ?>
 				</div>
 			<?php } ?>
 
+			<!-- Videos -->
+			<?php $fields = CFS()->get( 'datos_videos' );
+				if ($fields != '') {?>
+				<div class="caja-preguntas">
+
+					<?php foreach ( $fields as $field ) {  ?>
+					<div class="caja-conjunto">
+
+						<div class="caja-pregunta discos">
+							<h2><?php echo $field['titulo_videos']; ?></h2>
+							<?php
+							$videos = $field['videos'];
+							foreach ( $videos as $video ) {
+								echo $video['video-musica'];
+							}
+							 ?>
+						</div>
+
+					</div>
+					<?php } ?>
+
+				</div>
+			<?php } ?>
+			<!--// Videos -->
+
 			<?php $fields = CFS()->get( 'galeria' );
 				if ($fields != '') {?>
 				<div class="galeria">
